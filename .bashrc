@@ -87,6 +87,21 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+#aliases
+#git commands
+alias gs='git status'
+alias gba='git branch -a'
+alias gb='git branch'
+alias gc='git checkout'
+alias gl='git log'
+alias gf='git fetch'
+alias gp='git pull'
+alias grp='git rebase -p'
+
+#alias gita='git add --all'
+alias gitcommitamend='git commit --amend'
+
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
