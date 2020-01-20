@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-force_color_prompt=yes
+#force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[1;36m\]\u\[\033[01;31m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -87,21 +87,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-#aliases
-#git commands
-alias gs='git status'
-alias gba='git branch -a'
-alias gb='git branch'
-alias gc='git checkout'
-alias gl='git log'
-alias gf='git fetch'
-alias gp='git pull'
-alias grp='git rebase -p'
-
-#alias gita='git add --all'
-alias gitcommitamend='git commit --amend'
-
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -130,3 +115,18 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+JAVA_HOME=/opt/jdk1.8.0_144
+NODE_HOME="/home/parvezk/local/node-v12.14.0-linux-x64"
+export JAVA_HOME_8=/opt/jdk1.8.0_144
+
+export PATH=$NODE_HOME/bin:$PATH:$JAVA_HOME/bin::.:$PATH
+#PATH="$NODE_HOME/bin:$PATH:$JAVA_HOME/bin:$ANT_HOME/bin:$PATH:$MAVEN_HOME/bin:."
+
+#export PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \W \$\[\033[00m\] "
+#export PS1='\[\033[1;36m\]\u\[\033[01;31m\]@\[\033[01;32m\]\h\[\033[226m\]:\[\033[01;37m\]\w\[\033[00m\]\$ '
+export PS1='\[\033[1;36m\]\u\[\033[01;31m\]@\[\033[01;32m\]\h\[\033[00m\] \[\033[01;94m\]\w\[\033[00m\]\n\$ '
+export PROJDIR='/home/parvezk/brave-code'
+export indiabh='192.168.35.116'
+#PROMPT_COMMAND='echo -en "\033]0; $("pwd") \a"'
+. /etc/profile.d/vte.sh
